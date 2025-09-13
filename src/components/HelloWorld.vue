@@ -13,7 +13,7 @@ const mostrarAlerta = ref(null);
 
 // función para calcular
 function calcular() {
-  if (valorReal.value !== null && valorAprox.value !== null) {
+  if (valorReal.value !== null || valorAprox.value !== null) {
     eAbsoluto.value = errorAbsoluto(valorReal.value, valorAprox.value)
     eRelativo.value = errorRelativo(eAbsoluto.value, valorReal.value)
     mostrarTabla.value = true;
