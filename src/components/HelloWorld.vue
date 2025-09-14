@@ -10,8 +10,7 @@ const eRelativo = ref(null)
 
 const mostrarTabla = ref(null);
 const mostrarAlerta = ref(null);
-
-// función para calcular
+  
 function calcular() {
   if (Number.isFinite(valorReal.value) && Number.isFinite(valorAprox.value)) {
     eAbsoluto.value = errorAbsoluto(valorReal.value, valorAprox.value)
@@ -261,7 +260,6 @@ button:hover {
   color: #ef4444;
 }
 
-/* Responsive */
 @media (max-width: 480px) {
   .container {
     padding: 1.5rem;

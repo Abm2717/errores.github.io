@@ -6,7 +6,7 @@ import * as funciones from '../src/components/funciones.js'
 describe('HelloWorld.vue', () => {
 
   it('calcula errores correctamente y muestra la tabla', async () => {
-    // Mock de funciones
+    
     const errorAbs = 2
     const errorRel = 0.5
     const spyAbs = vi.spyOn(funciones, 'errorAbsoluto').mockReturnValue(errorAbs)
@@ -14,11 +14,11 @@ describe('HelloWorld.vue', () => {
 
     const wrapper = mount(Calculadora)
 
-    // Ingresar valores
+    
     await wrapper.find('input[placeholder="Ingresa valor real"]').setValue(4)
     await wrapper.find('input[placeholder="Ingresa valor aproximado"]').setValue(2)
 
-    // Hacer click en calcular
+    
     await wrapper.find('button').trigger('click')
 
     expect(spyAbs).toHaveBeenCalledWith(4,2)
@@ -31,7 +31,7 @@ describe('HelloWorld.vue', () => {
   it('muestra alerta si faltan datos', async () => {
     const wrapper = mount(Calculadora)
 
-    // Sin valores
+    
     await wrapper.find('button').trigger('click')
 
     expect(wrapper.vm.mostrarAlerta).toBe(true)
